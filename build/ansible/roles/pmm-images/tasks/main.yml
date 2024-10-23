@@ -35,6 +35,7 @@
     name:
       - python3-pip
       - rsync
+      - findutils
     state: latest
 
 - name: Create groups
