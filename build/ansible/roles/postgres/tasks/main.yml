@@ -13,11 +13,13 @@
     - not ansible_check_mode
   yum:
     name:
-      - percona-postgresql14-server
-      - percona-postgresql14-contrib
       - percona-postgresql14
+      - percona-postgresql14-server
       - python3-psycopg2 # Python PostgreSQL database adapter
+      - percona-postgresql14-contrib
     state: installed
+    nobest: true
+    skip_broken: true    
 
 - name: Create a socket directory for Postgres
   file:
